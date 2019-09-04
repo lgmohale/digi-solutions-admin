@@ -1,0 +1,24 @@
+{
+  "name": "digi-solutions-admin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lgmohale/digi-solutions-admin.git"
+  },
+  "keywords": [
+    "html",
+    "bootstrap",
+    "javascript"
+  ],
+  "author": "Lucas George Mohale",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lgmohale/digi-solutions-admin/issues"
+  },
+  "homepage": "https://github.com/lgmohale/digi-solutions-admin#readme"
+}
