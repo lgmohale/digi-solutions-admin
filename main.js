@@ -3,7 +3,7 @@ function getValue(id){
 };
 
 //adding university to the api
-function addUser(){
+function addVarsity(){
           
     const newVasity = {};
 
@@ -25,22 +25,24 @@ function addUser(){
         }
     };
 
-    fetch('1', option)
+    fetch('http://localhost:4000/university/add', option)
     .then(res=> res.json());
 };
 
 //displaying university from the api
-function display(){
-    fetch('http://localhost:4000/universities')
+function showVarsity(){
+    fetch('http://localhost:4000/getUniversities')
     .then(res => res.json())
     .then(res => res.map(varsity => varsity))
     .then(varsityData => document.getElementById("vtable").innerHTML = varsityData.map(data=>
         `<tr>
-            <td id="id">${data.id}</td>
-            <td id="name">${data.name}</td>
+            <td id="id">${data.university_id}</td>
+            <td id="name">${data.university_name}</td>
+            <td id="website">${data.website}</td>
+            <td id="telephone">${data.telephone}</td>
             <td id="email">${data.email}</td>
-            <td id="contactno">${data.contactno}</td>
-            <td id="address">${data.address}</td>
+            <td id="city">${data.city}</td>
+            <td id="province">${data.province}</td>
         </tr>`
-        ).join(''));
+    ).join(''));
  };
