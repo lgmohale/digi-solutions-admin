@@ -1,0 +1,28 @@
+<html>
+    <h2>System Recommender</h2>
+    <br>
+    <section>
+        <form>
+            <lable>What to you wish to study?</lable>
+            <input type="text" id="courseName">
+            <lable>Whats your total APS Score</lable>
+            <input type="number" id="score">
+            <input type="submit" value="find" onclick="find()">
+        </form>
+    </section>
+
+    <script>
+        function getValue(id){
+        return document.getElementById(id).value;
+        };
+
+        function find(){
+                
+            const data = {};
+
+            data.name = getValue("courseName");
+            data.score = getValue("score");
+            console.log(data)
+        }
+    </script>
+</html>

@@ -1,22 +1,17 @@
-function getValue(id){
-    return document.getElementById(id).value;
-};
-
 //adding university to the api
 function addVarsity(){
           
     const newVasity = {};
 
-    newVasity.name = getValue("name");
-    newVasity.email = getValue("email");
-    newVasity.contactno = getValue("contactno");
-    newVasity.address = getValue("address");
-    newVasity.city = getValue("city");
-    newVasity.country = getValue("country");
-    newVasity.postcode = getValue("postcode");
-    newVasity.about = getValue("about");
-
-    
+    newVasity.university_name = document.getElementById("university_name").value;
+    newVasity.university_description = document.getElementById("university_description").value;
+    newVasity.website = document.getElementById("website").value;
+    newVasity.telephone = document.getElementById("telephone").value;
+    newVasity.email = document.getElementById("email").value;
+    newVasity.city = document.getElementById("city").value;
+    newVasity.country = document.getElementById("country").value;
+    newVasity.province = document.getElementById("province").value;
+    console.log(newVasity);
     var option = {
         method: 'POST',
         body: JSON.stringify(newVasity),
@@ -25,7 +20,7 @@ function addVarsity(){
         }
     };
 
-    fetch('http://localhost:4000/university/add', option)
+    fetch('http://localhost:4000/putUniversities', option)
     .then(res=> res.json());
 };
 
@@ -46,3 +41,43 @@ function showVarsity(){
         </tr>`
     ).join(''));
  };
+
+
+ function tableNames(){
+    fetch('http://localhost:4000/selectNames')
+    .then(res => res.json())
+    .then(res => res.map(selctByname => selctByname))
+    .then(name => document.getElementById("nameOption").innerHTML = name.map(data=>
+        `<option>
+            < id="university_name">${data.university_name}</td>
+            <id="faculty_name">${data.faculty_name}</td>
+        </option>`
+    ).join(''));
+ };
+
+
+ //add course
+ function addCourse(){
+          
+    const newCourse = {};
+
+    newCourse.course_name = document.getElementById("course_name").value;
+    // newVasity.university_description = document.getElementById("university_description").value;
+    // newVasity.website = document.getElementById("website").value;
+    // newVasity.telephone = document.getElementById("telephone").value;
+    // newVasity.email = document.getElementById("email").value;
+    // newVasity.city = document.getElementById("city").value;
+    // newVasity.country = document.getElementById("country").value;
+    // newVasity.province = document.getElementById("province").value;
+    console.log(newCpourse);
+    var option = {
+        method: 'POST',
+        body: JSON.stringify(newVasity),
+        headers:{
+            'Content-Type': 'application/json'
+        }
+    };
+
+    fetch('http://localhost:4000/putUniversities', option)
+    .then(res=> res.json());
+};
